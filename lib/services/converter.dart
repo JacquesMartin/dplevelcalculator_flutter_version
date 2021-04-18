@@ -1,12 +1,12 @@
-class LRVConverter {
+class Converter {
   String measurementUnit;
   double rawLrv;
   String pressureUnit;
 
   // ignore: non_constant_identifier_names
-  LRVConverter({this.measurementUnit, this.pressureUnit, this.rawLrv});
+  Converter({this.measurementUnit, this.pressureUnit, this.rawLrv});
 
-  String convertLRV() {
+  String convert() {
     String calculatedLRVValue;
 
     switch (measurementUnit) {

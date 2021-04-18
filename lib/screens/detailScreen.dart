@@ -126,16 +126,22 @@ class ScaffoldWidget extends StatelessWidget {
                 pressureUnit: 'mbar',
               );
               break;
-            case 1: //Open Tank Single Wet Leg
+            case 1:
+
+              //Open Tank Single Wet Leg
+              //
               lrvProvider.calculate(
                 index: index,
                 lmax: double.parse(lmaxController.text),
                 lmin: double.parse(lminController.text),
                 sgProcess: double.parse(sgpController.text),
+                hRef: double.parse(dtxController.text),
+                sgFill: double.parse(sgfController.text),
                 dtx: double.parse(dtxController.text),
                 measurementUnit: 'in',
                 pressureUnit: 'mbar',
               );
+              print(lmaxController.text);
               break;
             case 2: //Impulse Dry Leg
               lrvProvider.calculate(
@@ -220,8 +226,9 @@ class ScaffoldWidget extends StatelessWidget {
               SliverAppBar(
                 backgroundColor: Colors.transparent,
                 expandedHeight: size * .35,
+                forceElevated: innerBoxIsScrolled,
                 floating: false,
-                pinned: true,
+                pinned: false,
                 flexibleSpace: FlexibleSpaceBar(
                   collapseMode: CollapseMode.parallax,
                   background: Hero(
@@ -530,7 +537,7 @@ class ScaffoldWidget extends StatelessWidget {
                             );
                           }).toList(),
                         ),
-                        TextFormWithDropdown(),
+                        //TextFormWithDropdown(),
                       ],
                     ),
                   ),

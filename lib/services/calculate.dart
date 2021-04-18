@@ -27,44 +27,46 @@ class LRVandURV extends ChangeNotifier {
         //LRV Formula
         double rawLrv = (lmin * sgProcess) - (hRef * sgFill);
         //Convert to units selected
-        LRVConverter convLrv = LRVConverter(
+        Converter convLrv = Converter(
             measurementUnit: measurementUnit,
             pressureUnit: pressureUnit,
             rawLrv: rawLrv);
-        _lrvResult = convLrv.convertLRV();
+        _lrvResult = convLrv.convert();
 
         //URV
         double rawUrv =
             (lmax * sgProcess) + (lmin * sgProcess) - (hRef * sgFill);
-        LRVConverter convUrv = LRVConverter(
+        Converter convUrv = Converter(
             measurementUnit: measurementUnit,
             pressureUnit: pressureUnit,
             rawLrv: rawUrv);
-        _urvResult = convUrv.convertLRV();
+        _urvResult = convUrv.convert();
         notifyListeners();
         break;
 
       //Impulse Wet Leg
       case 1:
         //URV
+        print(lmax);
         double rawUrv = (lmax * sgProcess) +
             (lmin * sgProcess) +
             (dtx * sgProcess) -
             (hRef * sgFill);
-        LRVConverter convUrv = LRVConverter(
+        print(rawUrv);
+        Converter convUrv = Converter(
             measurementUnit: measurementUnit,
             pressureUnit: pressureUnit,
             rawLrv: rawUrv);
-        _urvResult = convUrv.convertLRV();
+        _urvResult = convUrv.convert();
 
         //LRV
         double rawLrv =
             (lmin * sgProcess) + (dtx * sgProcess) - (hRef * sgFill);
-        LRVConverter convLrv = LRVConverter(
+        Converter convLrv = Converter(
             measurementUnit: measurementUnit,
             pressureUnit: pressureUnit,
             rawLrv: rawLrv);
-        _lrvResult = convLrv.convertLRV();
+        _lrvResult = convLrv.convert();
 
         notifyListeners();
         break;
@@ -73,18 +75,18 @@ class LRVandURV extends ChangeNotifier {
         //URV
         double rawUrv =
             (lmax * sgProcess) + (lmin * sgProcess) + (dtx * sgProcess);
-        LRVConverter convUrv = LRVConverter(
+        Converter convUrv = Converter(
             measurementUnit: measurementUnit,
             pressureUnit: pressureUnit,
             rawLrv: rawUrv);
-        _urvResult = convUrv.convertLRV();
+        _urvResult = convUrv.convert();
         //LRV
         double rawLrv = (lmin * sgProcess) + (dtx * sgProcess);
-        LRVConverter conv = LRVConverter(
+        Converter conv = Converter(
             measurementUnit: measurementUnit,
             pressureUnit: pressureUnit,
             rawLrv: rawLrv);
-        _lrvResult = conv.convertLRV();
+        _lrvResult = conv.convert();
 
         notifyListeners();
         break;
@@ -93,20 +95,20 @@ class LRVandURV extends ChangeNotifier {
         //URV
         double rawUrv =
             (overflowHeight) * (sg1) + (lmax + lmin) * (sg2) - (hRef * sgFill);
-        LRVConverter convUrv = LRVConverter(
+        Converter convUrv = Converter(
             measurementUnit: measurementUnit,
             pressureUnit: pressureUnit,
             rawLrv: rawUrv);
-        _urvResult = convUrv.convertLRV();
+        _urvResult = convUrv.convert();
 
         //LRV
         double rawLrv =
             (overflowHeight + lmax) * (sg1) + (lmin * sg2) - (hRef * sgFill);
-        LRVConverter conv = LRVConverter(
+        Converter conv = Converter(
             measurementUnit: measurementUnit,
             pressureUnit: pressureUnit,
             rawLrv: rawLrv);
-        _lrvResult = conv.convertLRV();
+        _lrvResult = conv.convert();
 
         notifyListeners();
         break;
@@ -115,19 +117,19 @@ class LRVandURV extends ChangeNotifier {
         //URV
         double rawUrv =
             (lmax * sgProcess) + (lmin * sgProcess) + (dtx * sgProcess);
-        LRVConverter convUrv = LRVConverter(
+        Converter convUrv = Converter(
             measurementUnit: measurementUnit,
             pressureUnit: pressureUnit,
             rawLrv: rawUrv);
-        _urvResult = convUrv.convertLRV();
+        _urvResult = convUrv.convert();
 
         //LRV
         double rawLrv = (lmin * sgProcess) + (dtx * sgProcess);
-        LRVConverter conv = LRVConverter(
+        Converter conv = Converter(
             measurementUnit: measurementUnit,
             pressureUnit: pressureUnit,
             rawLrv: rawLrv);
-        _lrvResult = conv.convertLRV();
+        _lrvResult = conv.convert();
 
         notifyListeners();
         break;
@@ -135,19 +137,19 @@ class LRVandURV extends ChangeNotifier {
 
         //URV
         double rawUrv = ((lmax + lmin) * sgProcess) - (dtx * sgFill);
-        LRVConverter convUrv = LRVConverter(
+        Converter convUrv = Converter(
             measurementUnit: measurementUnit,
             pressureUnit: pressureUnit,
             rawLrv: rawUrv);
-        _urvResult = convUrv.convertLRV();
+        _urvResult = convUrv.convert();
 
         //LRV
         double rawLrv = (lmin * sgProcess) - (dtx * sgFill);
-        LRVConverter conv = LRVConverter(
+        Converter conv = Converter(
             measurementUnit: measurementUnit,
             pressureUnit: pressureUnit,
             rawLrv: rawLrv);
-        _lrvResult = conv.convertLRV();
+        _lrvResult = conv.convert();
 
         notifyListeners();
         break;
@@ -156,19 +158,19 @@ class LRVandURV extends ChangeNotifier {
         //URV
         double rawUrv =
             (lmax * sgProcess) + (lmin * sgProcess) + (dtx * sgFill);
-        LRVConverter convUrv = LRVConverter(
+        Converter convUrv = Converter(
             measurementUnit: measurementUnit,
             pressureUnit: pressureUnit,
             rawLrv: rawUrv);
-        _urvResult = convUrv.convertLRV();
+        _urvResult = convUrv.convert();
 
         //LRV
         double rawLrv = (lmin * sgProcess) + (dtx * sgFill);
-        LRVConverter conv = LRVConverter(
+        Converter conv = Converter(
             measurementUnit: measurementUnit,
             pressureUnit: pressureUnit,
             rawLrv: rawLrv);
-        _lrvResult = conv.convertLRV();
+        _lrvResult = conv.convert();
 
         notifyListeners();
         break;
@@ -176,19 +178,19 @@ class LRVandURV extends ChangeNotifier {
 
         //URV
         double rawUrv = (lmax * sgProcess) + (lmin * sgProcess);
-        LRVConverter convUrv = LRVConverter(
+        Converter convUrv = Converter(
             measurementUnit: measurementUnit,
             pressureUnit: pressureUnit,
             rawLrv: rawUrv);
-        _urvResult = convUrv.convertLRV();
+        _urvResult = convUrv.convert();
 
         //LRV
         double rawLrv = (lmin * sgProcess);
-        LRVConverter conv = LRVConverter(
+        Converter conv = Converter(
             measurementUnit: measurementUnit,
             pressureUnit: pressureUnit,
             rawLrv: rawLrv);
-        _lrvResult = conv.convertLRV();
+        _lrvResult = conv.convert();
 
         notifyListeners();
         break;

@@ -10,14 +10,14 @@ class Pressure {
 final List<Pressure> pressures = [
   Pressure(
       imageUrl: 'assets/backgrounds/images/0.webp',
-      name: 'Capillary Two Seal',
+      name: 'Closed Tank Capillary Two Seal',
       category: 'Closed Tank',
       description:
           '''One of the most common and less maintenance type of level measurement.This is used on a pressurized tank wherein the tap to tap distance is the reference for pressure reading.The location of the transmitter in this case does not affect the reading.
 '''),
   Pressure(
       imageUrl: 'assets/backgrounds/images/1.webp',
-      name: 'Impulse Wet Leg',
+      name: 'Closed Tank Impulse Wet Leg',
       category: 'Closed Tank',
       description:
           '''Wet Leg implies that the LP impulse leg(or Reference Leg) is constantly filled with a medium at fixed level.This in turn becomes the reference pressure of the transmitter.This is the most common type of level measurement we can find in the industry. The reference point for measurement is the HP tapping point on the tank.
